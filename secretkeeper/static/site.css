@@ -1,0 +1,10 @@
+body {
+  padding-top: 50px;
+}
+.secret-box {
+  padding: 40px 15px;
+}
+
+.pagination {
+  text-align: center;
+}

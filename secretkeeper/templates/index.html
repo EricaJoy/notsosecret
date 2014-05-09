@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="secret-box">
+{% if secrets %}
+    <ul class="list-group">
+    {% for secret in secrets %}
+        <li class="list-group-item"><a href="{{ secret.secret_url }}">{{ secret.secret_text }}</a><span class="badge">{{ secret.share_count }}</span></li>
+    {% endfor %}
+    </ul>
+<div class="pagination">
+    <ul class="pager">
+    <span class="step-links">
+        {% if secrets.has_previous %}
+            <li><a href="?page={{ secrets.previous_page_number }}"><span class="glyphicon glyphicon-chevron-left"></a></li>
+        {% endif %}
+
+        <span class="current">
+            Page {{ secrets.number }} of {{ secrets.paginator.num_pages }}
+        </span>
+
+        {% if secrets.has_next %}
+            <li><a href="?page={{ secrets.next_page_number }}"><span class="glyphicon glyphicon-chevron-right"></a></li>
+        {% endif %}
+    </span>
+    </ul>
+</div>
+
+
+{% else %}
+    <p>Secret secrets are no fun. Secret secrets hurt someone.</p>
+{% endif %}
+</div>
+{% endblock %}
