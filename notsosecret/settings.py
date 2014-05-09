@@ -19,14 +19,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
-# Database credentials
-DB_USER = os.environ['DJANGO_DB_USER']
-DB_PASSWORD = os.environ['DJANGO_DB_PASSWORD']
+if not os.environ.has_key('DATABASE_URL'):
+    # Database credentials
+    DB_USER = os.environ['DJANGO_DB_USER']
+    DB_PASSWORD = os.environ['DJANGO_DB_PASSWORD']
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = True
 
-TEMPLATE_DEBUG = True
+    TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
