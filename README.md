@@ -1,8 +1,9 @@
 notsosecret
 =========
 
-notsosecret is an aggregator of secret.ly links posted to Twitter
-You can view a live version of this at http://holle.red (at some point when DNS updates)
+notsosecret is an aggregator of secret.ly links posted to Twitter.
+
+You can view a live version of this at http://holle.red (at some point when DNS updates).
 
 
 Requirements
