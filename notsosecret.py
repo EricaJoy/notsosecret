@@ -52,13 +52,13 @@ def expand_bitly(bitly_url):
 
 # Store last tweet id
 def store_last_tweetid(tweetid):
-    f = open('/home/vagrant/notsosecret/tweetstorage', 'w')
+    f = open('tweetstorage', 'w')
     f.write(str(tweetid))
     f.close()
 
 # Retrieve last tweet id
 def retrieve_last_tweetid():
-    f = open('/home/vagrant/notsosecret/tweetstorage', 'r')
+    f = open('tweetstorage', 'r')
     tweet_id = f.read()
     return int(tweet_id)
 
