@@ -5,6 +5,10 @@ notsosecret is an aggregator of secret.ly links posted to Twitter.
 
 You can view a live version of this at http://holle.red (at some point when DNS updates).
 
+Why?
+----
+I think it's interesting to watch just how "secret" secrets aren't. Also I needed to learn Django and this seemed like a fine excuse.
+
 
 Requirements
 ----
