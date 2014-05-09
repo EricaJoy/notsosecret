@@ -65,7 +65,7 @@ def retrieve_last_tweetid():
 # Search Twitter for secret.ly URLs
 def twitter_search():
     results = api.GetSearch(term='secret.ly/p/', result_type='recent', \
-                            count=15, since_id=retrieve_last_tweetid())
+                            count=30, since_id=retrieve_last_tweetid())
     if len(results) > 0:
         store_last_tweetid(results[-1].id)
         links = []
