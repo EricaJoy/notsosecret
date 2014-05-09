@@ -19,6 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
+# Test to see if we're local.
 if not os.environ.has_key('DATABASE_URL'):
     # Database credentials
     DB_USER = os.environ['DJANGO_DB_USER']
@@ -28,6 +29,21 @@ if not os.environ.has_key('DATABASE_URL'):
     DEBUG = True
 
     TEMPLATE_DEBUG = True
+
+    # Database
+    # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': 'secrets',                      # Or path to database file if using sqlite3.
+            # The following settings are not used with sqlite3:
+            'USER': DB_USER,
+            'PASSWORD': DB_PASSWORD,
+            'HOST': 'localhost',      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+            'PORT': '',               # Set to empty string for default.
+        }
+    }
 
 ALLOWED_HOSTS = []
 
@@ -57,21 +73,6 @@ ROOT_URLCONF = 'notsosecret.urls'
 
 WSGI_APPLICATION = 'notsosecret.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'secrets',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': DB_USER,
-        'PASSWORD': DB_PASSWORD,
-        'HOST': 'localhost',      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',               # Set to empty string for default.
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
