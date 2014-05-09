@@ -1,6 +1,11 @@
 body {
   padding-top: 50px;
 }
+
+.navbar-default .navbar-brand {
+    color: #d9230f;
+}
+
 .secret-box {
   padding: 40px 15px;
 }
@@ -17,4 +22,19 @@ body {
 .navbar-brand {
     font-size: 24px;
     padding: 5px 15px;
+}
+
+.badge {
+  background-color: #d9230f;  
+}
+
+li.list-group-item.active  {
+    z-index: 2;
+    color: #fff;
+    background-color: #d9230f;
+    font-weight: bold;
+}
+
+li.list-group-item.active .badge {
+    background-color: #d9230f
 }

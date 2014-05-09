@@ -3,6 +3,7 @@
 <div class="secret-box">
 {% if secrets %}
     <ul class="list-group">
+    <li class="list-group-item active">Shared Secret<span class="badge" title="Number of shares on Twitter">Shares</span></li>
     {% for secret in secrets %}
         <li class="list-group-item"><a href="{{ secret.secret_url }}">{{ secret.secret_text }}</a><span class="badge">{{ secret.share_count }}</span></li>
     {% endfor %}
