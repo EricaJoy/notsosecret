@@ -46,6 +46,7 @@ coverage.xml
 docs/_build/
 
 # Random stuff
+*.dump
 .vagrant
 Vagrantfile
 .DS_Store
