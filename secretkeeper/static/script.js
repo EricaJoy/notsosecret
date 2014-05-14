@@ -3,7 +3,7 @@ $('.glyphicon-circle-arrow-up').click(function() {
     var $csrftoken = $.cookie('csrftoken');
     var $this = $(this);
     $.ajax({
-        url:'vote/',
+        url:'/vote/',
         data: {id: id},
         type: 'POST',
         context: this,
