@@ -1,18 +1,50 @@
 {% extends "base.html" %}
 {% block content %}
+
 <div class="secret-box">
 {% if secrets %}
     <ul class="list-group">
-    <li class="list-group-item active">Shared Secret<span class="badge" title="Number of shares on Twitter">Shares</span></li>
+    <li class="list-group-item active">
+    <div class="row">
+    <div class="col-md-1 center-block">
+
+    </div>
+    <div class="col-md-10">
+        Shared Secret
+        </div>
+        
+        <span class="badge" title="Number of shares on Twitter">Shares</span>
+        
+        </div>
+    </li>
     {% for secret in secrets %}
-        <li class="list-group-item"><a href="{{ secret.secret_url }}">{{ secret.secret_text }}</a><span class="badge">{{ secret.share_count }}</span></li>
+        <li class="list-group-item">
+        <div class="row">
+        <div id="vote" class="col-md-1 center-block">
+        <span class="glyphicon glyphicon-circle-arrow-up vote" title="{{ secret.postive_count }}" 
+        id="up_button" name="{{ secret.secrets_id }}"></span>
+        </div>
+        <div class="col-md-1 col-md-push-10">
+        <span class="badge">{{ secret.share_count }}</span>
+        </div>
+        <div class="col-md-10 col-md-pull-1">
+        <a href="{{ secret.secret_url }}">{{ secret.secret_text }}</a>
+        </div>
+
+        </div>
+        </li>
+        
     {% endfor %}
     </ul>
 <div class="pagination">
     <ul class="pager">
     <span class="step-links">
         {% if secrets.has_previous %}
-            <li><a href="?page={{ secrets.previous_page_number }}"><span class="glyphicon glyphicon-chevron-left"></a></li>
+            {% if secrets.previous_page_number == 1 %}
+                <li><a href="/"><span class="glyphicon glyphicon-chevron-left"></a></li>
+            {% else %}
+                <li><a href="/page/{{ secrets.previous_page_number }}"><span class="glyphicon glyphicon-chevron-left"></a></li>
+            {% endif %}
         {% endif %}
 
         <span class="current">
@@ -20,7 +52,7 @@
         </span>
 
         {% if secrets.has_next %}
-            <li><a href="?page={{ secrets.next_page_number }}"><span class="glyphicon glyphicon-chevron-right"></a></li>
+            <li><a href="/page/{{ secrets.next_page_number }}"><span class="glyphicon glyphicon-chevron-right"></a></li>
         {% endif %}
     </span>
     </ul>

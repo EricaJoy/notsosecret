@@ -49,4 +49,5 @@ docs/_build/
 *.dump
 .vagrant
 Vagrantfile
+tweetstorage
 .DS_Store

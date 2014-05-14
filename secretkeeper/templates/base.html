@@ -7,7 +7,8 @@
     <meta name="description" content="“Three may keep a secret, if two of them are dead.”">
     <!-- https://www.youtube.com/watch?v=Uy5QcMp4kCs -->
     <meta name="author" content="Erica Joy">
-    <link rel="shortcut icon" href="../static/favicon.ico">
+    {% load static from staticfiles %}
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
 
     <title>holle.red</title>
 
@@ -17,7 +18,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/simplex/bootstrap.min.css">
 
-    <link href="../static/site.css" rel="stylesheet">
+    <link href="{% static 'site.css' %}" rel="stylesheet">
 
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -69,7 +70,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'script.js' %}"></script>
 
     <!-- Analytics -->
     <script>
