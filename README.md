@@ -3,7 +3,7 @@ notsosecret
 
 notsosecret is an aggregator of secret.ly links posted to Twitter.
 
-You can view a live version of this at http://holle.red (at some point when DNS updates).
+This used to live at http://holle.red. 
 
 Why?
 ----
@@ -24,7 +24,7 @@ Installation
 
 pip install requirements.txt
 
-(There is more, but I'll fill that in later. Date time.)
+(There is more, but I'll fill that in later.)
 
 notsosecret.py is meant to run as a scheduled task of some sort.
 
