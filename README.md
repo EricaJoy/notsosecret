@@ -3,12 +3,11 @@ notsosecret
 
 notsosecret is an aggregator of secret.ly links posted to Twitter.
 
-This used to live at http://holle.red. 
+Note: This was written during my free time while I was employed at a place that wasn't keen on it being public. I don't work at that place anymore, so now it can be public, it all it's horribleness. It used to live at http://holle.red. It does not anymore. RIP Secret.
 
 Why?
 ----
 I think it's interesting to watch just how "secret" secrets aren't. Also I needed to learn Django and this seemed like a fine excuse.
-
 
 Requirements
 ----
@@ -38,6 +37,5 @@ License
 ----
 
 What?
-
 
 **Pull requests welcome**
